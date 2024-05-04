@@ -2,7 +2,7 @@
 
 master - oslab
 worker - oslab2
-
+\\\bash
 # master setting
 
 sudo apt update
