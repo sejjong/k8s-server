@@ -24,9 +24,11 @@ EOF
 sudo sysctl --system
 
 sudo sed -i '/swap/d' /etc/fstab
+
 sudo swapoff -a
 
 systemctl stop firewalld
+
 systemctl disable firewalld
 
 CRI 설치
