@@ -48,7 +48,7 @@ sudo apt-get update
 
 * CRI 설치
 
-sudo apt-get install containerd
+sudo apt-get install -y containerd
 sudo mkdir -p /etc/containerd/
 
 containerd config default | sudo tee /etc/containerd/config.toml >/dev/null 2>&1
@@ -61,6 +61,9 @@ sudo systemctl enable containerd
 sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
+
+cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1 
+to the file /boot/firmware/cmdline.txt.
 
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=???? --cri-socket unix:///var/run/containerd/containerd.sock
 
