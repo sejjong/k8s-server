@@ -64,7 +64,7 @@ sudo apt-mark hold kubelet kubeadm kubectl
 
 cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1 
 to the file /boot/firmware/cmdline.txt.
-
+sudo kubeadm token  create --print-join-command
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=???? --cri-socket unix:///var/run/containerd/containerd.sock
 
 mkdir -p $HOME/.kube
